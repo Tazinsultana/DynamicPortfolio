@@ -15,30 +15,20 @@
                 </div>
                 <div class="mb-3">
 
-                    <x-form.textarea title="Description"  id="des" name="des" row="10" placeholder=" I'm confident at...." />
+                    <x-form.textarea title="Description" id="des" name="des" row="10"
+                        placeholder=" I'm confident at...." />
 
                 </div>
                 <div class="mb-3">
                     <x-form.input title="Full Name" name="fullname" type="text" placeholder="" />
                 </div>
                 <div class="mb-3">
-                    {{-- <label for="name" class="form-label">Date</label> --}}
-                    {{-- <input type="text" class="form-control" id="name" name="name"> --}}
-                    <label for="date" class="form-label">Date</label>
-                    {{-- <input id="update_date" name="date" autocomplete="false"
-                        class="form-control date-picker"> --}}
-                        <div class="col-5">
-                            <div class="input-group date" id="datepicker">
-                              <input type="text" class="form-control" id="date"/>
-                              <span class="input-group-append">
-                                <span class="input-group-text bg-light d-block">
-                                  <i class="fa fa-calendar"></i>
-                                </span>
-                              </span>
-                            </div>
-                          </div>
 
+                    <label for="date" class="form-label"> BithDate</label>
+
+                    <input type="date" id="date" name="date">
                 </div>
+
                 <div class="mb-3">
                     <x-form.input title="Graduation" name="degree" type="text" placeholder="" />
                 </div>

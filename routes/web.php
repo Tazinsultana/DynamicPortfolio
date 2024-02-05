@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BackendController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\QualificationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,3 +34,12 @@ Route::get('/about','index')->name('about.index');
 
 });
 
+
+// for qualification.....
+
+Route::controller(QualificationController::class)->group(function(){
+
+
+    Route::get('/education','index')->name('education.index');
+
+    });

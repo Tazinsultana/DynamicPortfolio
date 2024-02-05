@@ -43,14 +43,14 @@
                    with font-awesome or any other icon font library -->
 
                 <li class="nav-item menu-open">
-                    <a href="#" class="nav-link active">
+                    <a href="{{ route('about.index') }}" class="nav-link active">
                         <i class="nav-icon fas fa-copy"></i>
                         <p>
                             About
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
+                    {{-- <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ route('about.index') }}" class="nav-link ">
                                 <i class="far fa-circle nav-icon"></i>
@@ -64,12 +64,12 @@
                             </a>
                         </li> --}}
 
-                    </ul>
-                </li>
+                    {{-- </ul>  --}}
+                {{-- </li> --}}
 
 
                 <li class="nav-item menu-open">
-                    <a href="#" class="nav-link active">
+                    <a href="{{ route('education.index') }}" class="nav-link active">
                         <i class="nav-icon fas fa-book"></i>
                         <p>
                             Qualification
