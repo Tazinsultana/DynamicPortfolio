@@ -50,21 +50,21 @@
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-                    {{-- <ul class="nav nav-treeview">
+                    <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link ">
+                            <a href="{{ route('about.index') }}" class="nav-link ">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Add Categoies</p>
+                                <p>Add About</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href=#" class="nav-link ">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>All Categories</p>
+                                <p>All About</p>
                             </a>
-                        </li>
+                        </li> --}}
 
-                    </ul> --}}
+                    </ul>
                 </li>
 
 
