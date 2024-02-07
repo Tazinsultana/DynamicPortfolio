@@ -24,4 +24,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 //     Route::get('/about', 'index')->name('about.index');
+//     Route::post('/about/add','insert')->name('add.about');
 // });

@@ -1,5 +1,7 @@
 <!-- Modal -->
 <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <form action=""method="post" id="add">
+        @csrf
     <div class="modal-dialog">
 
         <div class="modal-content">
@@ -10,7 +12,7 @@
             <div class="modal-body">
                 <div class="mb-3">
 
-                    <x-form.input title="Title" name="title" type="text" placeholder="" />
+                    <x-form.input title="Title" id="title" name="title" type="text" placeholder="" />
 
                 </div>
                 <div class="mb-3">
@@ -20,7 +22,7 @@
 
                 </div>
                 <div class="mb-3">
-                    <x-form.input title="Full Name" name="fullname" type="text" placeholder="" />
+                    <x-form.input title="Full Name" id="name" name="fullname" type="text" placeholder="" />
                 </div>
                 <div class="mb-3">
 
@@ -30,25 +32,26 @@
                 </div>
 
                 <div class="mb-3">
-                    <x-form.input title="Graduation" name="degree" type="text" placeholder="" />
+                    <x-form.input title="Graduation" id="deg" name="degree" type="text" placeholder="" />
                 </div>
                 <div class="mb-3">
-                    <x-form.input title="Phone No" name="phn_no" type="text" placeholder="" />
+                    <x-form.input title="Phone No" id="phn_no" name="phn_no" type="text" placeholder="" />
                 </div>
                 <div class="mb-3">
-                    <x-form.input title="Address" name="address" type="text" placeholder="" />
+                    <x-form.input title="Address" id="add" name="address" type="text" placeholder="" />
                 </div>
                 <div class="mb-3">
-                    <x-form.input title="E-mail" name="email" type="email" placeholder="abc@gmail.com" />
+                    <x-form.input title="E-mail" id="email" name="email" type="email"
+                        placeholder="abc@gmail.com" />
                 </div>
                 <div class="mb-3">
-                    <x-form.input title="Upload File" name="file" type="file" placeholder="" />
+                    <x-form.input title="Upload File" id="file" name="file" type="file" placeholder="" />
                 </div>
 
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary add_details" >Save </button>
+                <button type="button" class="btn btn-primary add_details">Save </button>
             </div>
         </div>
     </div>
