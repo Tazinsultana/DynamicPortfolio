@@ -26,11 +26,12 @@ Route::get('/homepage',[FrontendController::class,'Index']);
 Route::get('/admin/dashboard',[BackendController::class,'Index']);
 
 
-// for About section.....
+// // for About section.....
 Route::controller(AboutController::class)->group(function(){
 
 
 Route::get('/about','index')->name('about.index');
+Route::post('/about/add','insert')->name('add.about');
 
 });
 

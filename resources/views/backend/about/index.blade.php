@@ -37,4 +37,5 @@
 
     </div>
 @endsection
+@include('backend.about.ajax')
 @include('backend.about.addmodal')

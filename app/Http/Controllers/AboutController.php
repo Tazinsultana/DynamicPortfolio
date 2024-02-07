@@ -10,4 +10,15 @@ class AboutController extends Controller
 
         return view('backend.about.index');
     }
+    // for Create...
+    public function insert(Request $request){
+        
+
+
+
+
+
+    }
+
+
 }
