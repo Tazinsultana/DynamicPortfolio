@@ -26,7 +26,7 @@
             let name = $('#name').val();
             let date = $('#date').val();
             let deg = $('#deg').val();
-            let phn = $('#phn_no').val();
+            let phone = $('#phnno').val();
             let address = $('#add').val();
             let email = $('#email').val();
             let img = $('#file').val();
@@ -44,7 +44,7 @@
                 name,
                 date,
                 deg,
-                phn,
+                phone,
                 address,
                 email,
                 img
@@ -57,6 +57,34 @@
                     $('.table').load(location.href + ' .table');
 
                 }
+            },
+            error: function(err) {
+                if (res.status == 400) {
+
+
+                    $('.errors').html('');
+                    $('.errors').removeClass('d-done');
+                    $('.titleError').text('res.errors.title');
+                    $('.DesError').text('res.errors.des');
+                    $('.nameError').text('res.errors.name');
+                    $('.birthdateError').text('res.errors.date');
+                    $('.degreeError').text('res.errors.degree');
+                    $('.phnnoError').text('res.errors.phone');
+                    $('.addressError').text('res.errors.address');
+                    $('.emailError').text('res.errors.email');
+                    $('.imageError').text('res.errors.image');
+
+
+                } else {
+                    $('.errors').html('');
+                    $('.errors').addClass('d-done');
+                }
+
+                // let error = err.responseJSON;
+                // $.each(error.errors, function(index, value) {
+                //     $('.errMsgContainer').append('<span class="text-danger">' +
+                //         value + '</span>');
+                // });
             }
 
 
