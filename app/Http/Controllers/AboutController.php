@@ -16,7 +16,7 @@ class AboutController extends Controller
     // for Create...
     public function insert(Request $request)
     {
-        // dd($request->all());
+        dd($request->all());
 
         $validator = Validator::make(
             $request->all(),

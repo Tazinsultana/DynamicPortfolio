@@ -31,63 +31,64 @@
             let email = $('#email').val();
             let img = $('#file').val();
 
-            console.log(title, des);
+            // console.log(title, date);
 
-        })
-        $.ajax({
+            // })
+            $.ajax({
 
-            url: "{{ route('add.about') }}",
-            method: 'POST',
-            data: {
-                title,
-                des,
-                name,
-                date,
-                deg,
-                phone,
-                address,
-                email,
-                img
-            },
+                url: "{{ route('add.about') }}",
+                method: 'POST',
+                data: {
+                    title,
+                    des,
+                    name,
+                    date,
+                    deg,
+                    phone,
+                    address,
+                    email,
+                    img
+                },
 
-            success: function(res) {
-                if (res.status == 'success') {
-                    $('#addModal').modal('hide');
-                    $('#add')[0].reset();
-                    $('.table').load(location.href + ' .table');
+                success: function(res) {
+                    if (res.status == 'success') {
+                        $('#addModal').modal('hide');
+                        $('#add')[0].reset();
+                        $('.table').load(location.href + ' .table');
 
+                    }
+                },
+                error: function(err) {
+                    if (err.status == 400) {
+
+
+                        $('.errors').html('');
+                        $('.errors').removeClass('d-done');
+                        $('.titleError').text('res.errors.title');
+                        $('.DesError').text('res.errors.des');
+                        $('.nameError').text('res.errors.name');
+                        $('.birthdateError').text('res.errors.date');
+                        $('.degreeError').text('res.errors.degree');
+                        $('.phnnoError').text('res.errors.phone');
+                        $('.addressError').text('res.errors.address');
+                        $('.emailError').text('res.errors.email');
+                        $('.imageError').text('res.errors.image');
+
+
+                    } else {
+                        $('.errors').html('');
+                        $('.errors').addClass('d-done');
+                    }
+
+                    // let error = err.responseJSON;
+                    // $.each(error.errors, function(index, value) {
+                    //     $('.errMsgContainer').append('<span class="text-danger">' +
+                    //         value + '</span>');
+                    // });
                 }
-            },
-            error: function(err) {
-                if (res.status == 400) {
 
 
-                    $('.errors').html('');
-                    $('.errors').removeClass('d-done');
-                    $('.titleError').text('res.errors.title');
-                    $('.DesError').text('res.errors.des');
-                    $('.nameError').text('res.errors.name');
-                    $('.birthdateError').text('res.errors.date');
-                    $('.degreeError').text('res.errors.degree');
-                    $('.phnnoError').text('res.errors.phone');
-                    $('.addressError').text('res.errors.address');
-                    $('.emailError').text('res.errors.email');
-                    $('.imageError').text('res.errors.image');
-
-
-                } else {
-                    $('.errors').html('');
-                    $('.errors').addClass('d-done');
-                }
-
-                // let error = err.responseJSON;
-                // $.each(error.errors, function(index, value) {
-                //     $('.errMsgContainer').append('<span class="text-danger">' +
-                //         value + '</span>');
-                // });
-            }
-
-
+            })
         })
     })
 </script>

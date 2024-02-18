@@ -8,12 +8,13 @@
         <div style="display:flex;justify-content:end">
 
         </div><br>
+        {{-- @dd('hi') --}}
         <form action="{{ route('experience.store') }}" method="post">
             @csrf
 
             <div class="mb-3">
 
-                <x-form.input title="Position Name" name="deg_name" type="text" placeholder="" />
+                <x-form.input title="Position Name" name="des_name" type="text" placeholder="" />
 
             </div>
             <div class="mb-3">
@@ -39,7 +40,8 @@
 
             </div>
             <div class="mb-3">
-                <a href="{{ route('experience.index') }}" class="btn btn-primary" type="submit">Add</a>
+                {{-- <a href="{{ route('experience.index') }}" class="btn btn-primary" type="submit">Add</a> --}}
+                <button class="btn btn-primary" type="submit">Add </button>
             </div>
     </div>
 @endsection

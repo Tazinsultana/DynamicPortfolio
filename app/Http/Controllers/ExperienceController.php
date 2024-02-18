@@ -28,17 +28,24 @@ class ExperienceController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $request->validate([
-            'des_name' => 'required:experiences',
+
+                   // form name...
+
+            'des_name' => 'required',
             'company_name' => 'required',
-            'start_date' => 'required',
-            'end_date' => 'required',
+            'start' => 'required',
+            'end' => 'required',
             'short_description' => 'required',
 
 
+
         ]);
+        // dd($request->all());
+
         Experience::create([
-            'des_name' => $request->deg_name,
+            'des_name' => $request->des_name,
             'company_name' => $request->company_name,
             'start_date' => $request->start,
             'end_date' => $request->end,
