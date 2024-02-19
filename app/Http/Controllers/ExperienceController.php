@@ -12,7 +12,8 @@ class ExperienceController extends Controller
      */
     public function index()
     {
-        return view('backend.experience.index');
+        $experiences = Experience::latest()->get();
+        return view('backend.experience.index', compact('experiences'));
     }
 
     /**
@@ -31,7 +32,7 @@ class ExperienceController extends Controller
         // dd($request->all());
         $request->validate([
 
-                   // form name...
+            // form name...
 
             'des_name' => 'required',
             'company_name' => 'required',
@@ -68,7 +69,7 @@ class ExperienceController extends Controller
      */
     public function edit(Experience $experience)
     {
-        //
+        return view('backend.experience.edit', compact('experience'));
     }
 
     /**
@@ -76,7 +77,30 @@ class ExperienceController extends Controller
      */
     public function update(Request $request, Experience $experience)
     {
-        //
+        // dd($request->all());
+        $request->validate([
+
+            'up_des_name' => 'required',
+            'up_company_name' => 'required',
+            'up_start' => 'required',
+            'up_end' => 'required',
+            'up_short_description' => 'required',
+
+
+        ]);
+        // dd($request->all());
+
+        $experience->update([
+
+            'des_name' => $request->up_des_name,
+            'company_name' => $request->up_company_name,
+            'start_date' => $request->up_start,
+            'end_date' => $request->up_end,
+            'short_description' => $request->up_short_description,
+
+
+        ]);
+        return redirect()->route('experience.index')->withMessage('Experience Added SuccessFully');
     }
 
     /**
@@ -84,6 +108,15 @@ class ExperienceController extends Controller
      */
     public function destroy(Experience $experience)
     {
-        //
+        $experience->delete();
+        // dd(delete());
+        return redirect()->route('experience.index')->withMessage('Experience Deleted Succefully');
     }
+
+    // public function destroy(Request $id)
+    // {
+    //     Experience::findOrFail($id)->delete();
+    //     // dd(delete());
+    //     return redirect()->route('experience.index')->withMessage('Experience Deleted Succefully');
+    // }
 }
