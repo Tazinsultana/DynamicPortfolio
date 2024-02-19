@@ -33,10 +33,10 @@
 
                         <td>
                             <a href="{{ route('experience.edit', $experience->id) }}" class="btn btn-success">Edit</a>
-                            <a href="" class="btn btn-primary">View</a>
+                            {{-- <a href="{{ route('experience.show', $experience->id) }}" class="btn btn-primary">View</a> --}}
                             {{-- <a href="{{ route('experience.destroy', $experience->id) }}" class="btn btn-primary">Delete</a> --}}
 
-                           <form action="{{ route('experience.destroy', $experience->id) }}" method="POST">
+                            <form action="{{ route('experience.destroy', $experience->id) }}" method="POST"><br>
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger"> Delete </button>

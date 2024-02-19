@@ -20,9 +20,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // for About section.....
-// Route::controller(AboutController::class)->group(function () {
+Route::controller(AboutController::class)->group(function () {
 
 
-//     Route::get('/about', 'index')->name('about.index');
-//     Route::post('/about/add','insert')->name('add.about');
-// });
+    Route::get('/about', 'index')->name('about.index');
+    Route::post('/about/add','insert')->name('add.about');
+    Route::get('/about/add','insert')->name('add.about');
+});

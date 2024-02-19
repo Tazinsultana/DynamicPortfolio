@@ -61,7 +61,7 @@ class ExperienceController extends Controller
      */
     public function show(Experience $experience)
     {
-        //
+        // return view('backend.experience.show',compact('experience'));
     }
 
     /**

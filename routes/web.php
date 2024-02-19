@@ -5,6 +5,7 @@ use App\Http\Controllers\BackendController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\QualificationController;
 use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\FetchController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,3 +49,10 @@ Route::controller(QualificationController::class)->group(function () {
 // For Experience.....
 
 Route::resource('experience', ExperienceController::class);
+
+
+Route::controller(FetchController::class)->group(function () {
+    Route::get('/experiencesection/{id}', 'experiencePage')->name('experiencepage');
+
+
+});

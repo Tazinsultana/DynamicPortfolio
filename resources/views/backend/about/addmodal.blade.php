@@ -48,7 +48,7 @@
                         <div class="phnnoError errors d-none"></div>
                     </div>
                     <div class="mb-3">
-                        <x-form.input title="Address" id="add" name="address" type="text" placeholder="" />
+                        <x-form.input title="Address" id="add" name="add" type="text" placeholder="" />
                         <div class="addressError errors d-none"></div>
                     </div>
                     <div class="mb-3">

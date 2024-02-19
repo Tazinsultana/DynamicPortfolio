@@ -27,11 +27,11 @@
             let date = $('#date').val();
             let deg = $('#deg').val();
             let phone = $('#phnno').val();
-            let address = $('#add').val();
+            let add = $('#add').val();
             let email = $('#email').val();
-            let img = $('#file').val();
+            let img_url = $('#file').val();
 
-            // console.log(title, date);
+            console.log(title, des,name,date,deg,phone,add,email,img_url);
 
             // })
             $.ajax({
@@ -45,9 +45,9 @@
                     date,
                     deg,
                     phone,
-                    address,
+                    add,
                     email,
-                    img
+                    img_url
                 },
 
                 success: function(res) {

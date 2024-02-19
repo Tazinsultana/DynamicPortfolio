@@ -16,21 +16,21 @@ class AboutController extends Controller
     // for Create...
     public function insert(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
 
         $validator = Validator::make(
             $request->all(),
             [
 
-                'title' => 'required:abouts',
-                'description' => 'required',
-                'full_name' => 'required',
+                'title' => 'required',
+                'des' => 'required',
+                'fullname' => 'required',
                 'date' => 'required',
                 'degree' => 'required',
-                'phone' => 'required',
-                'address' => 'required',
+                'phnno' => 'required',
+                'add' => 'required',
                 'email' => 'required|unique:abouts,email',
-                'img' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+                'file' => 'required|image|mimes:jpeg,png,jpg|max:2048',
 
             ]
         );
@@ -58,24 +58,24 @@ class AboutController extends Controller
             ]);
         } else {
 
-            About::create([
-                'title' => $request->title,
-                'description' => $request->des,
-                'full_name' => $request->name,
-                'date' => $request->date,
-                'degree' => $request->deg,
-                'phone' => $request->phone,
-                'address' => $request->address,
-                'email' => $request->email,
-                'img' => $img_url,
+        About::create([
+            'title' => $request->title,
+            'description' => $request->des,
+            'full_name' => $request->name,
+            'date' => $request->date,
+            'degree' => $request->deg,
+            'phone' => $request->phone,
+            'address' => $request->add,
+            'email' => $request->email,
+            'img' => $request->img_url,
 
 
 
-            ]);
-            return response()->json([
-                'status' => 'success'
+        ]);
+        return response()->json([
+            'status' => 'success'
 
-            ]);
-        }
+        ]);
     }
+}
 }
