@@ -43,6 +43,8 @@ Route::controller(QualificationController::class)->group(function () {
 
 
     Route::get('/education', 'index')->name('education.index');
+    // Route::get('/education/add', 'insert')->name('education.add');
+    Route::post('/education/add', 'insert')->name('education.add');
 });
 
 
@@ -53,6 +55,4 @@ Route::resource('experience', ExperienceController::class);
 
 Route::controller(FetchController::class)->group(function () {
     Route::get('/experiencesection/{id}', 'experiencePage')->name('experiencepage');
-
-
 });
