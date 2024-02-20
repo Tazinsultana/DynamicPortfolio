@@ -19,23 +19,25 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Tazin Sultana</td>
-                    <td>Laravel Developer</td>
-                    <td>
-                        <a href="" class="btn btn-success">Edit</a>
-                        <a href="" class="btn btn-primary">View</a>
-                        <a href="" class="btn btn-danger"> Delete</a>
+                @foreach ($about as $key => $abouts)
+                    <tr>
+                        <th scope="row">{{ $key + 1 }}</th>
+                        <td>{{ $abouts->full_name}}</td>
+                        <td>{{$abouts->description}}</td>
+                        <td>
+                            <a href="" class="btn btn-success data-bs-toggle="modal"
+                                data-bs-target="#updateModal">Edit</a>
+                            <a href="" class="btn btn-primary">View</a>
+                            <a href="" class="btn btn-danger"> Delete</a>
 
-                    </td>
-                </tr>
-
-
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
 
     </div>
 @endsection
 @include('backend.about.ajax')
+@include('backend.about.update')
 @include('backend.about.addmodal')

@@ -9,7 +9,8 @@ class QualificationController extends Controller
 {
     public function index()
     {
-        return view('backend.qualification.index');
+        $education = Qualification::latest()->get();
+        return view('backend.qualification.index', compact('education'));
     }
 
     public function insert(Request $request)
@@ -25,7 +26,7 @@ class QualificationController extends Controller
 
         ]);
 
-//   dd($request->all());
+        //   dd($request->all());
         Qualification::create([
             'deg_title' => $request->deg_name,
             'inst_name' => $request->inst_name,
@@ -36,7 +37,7 @@ class QualificationController extends Controller
         ]);
         return response()->json([
             'status' => 'success',
-            'msg'=>'Create Successfully',
+            'msg' => 'Create Successfully',
 
         ]);
     }

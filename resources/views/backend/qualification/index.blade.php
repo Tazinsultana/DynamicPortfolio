@@ -19,23 +19,26 @@
                 </tr>
             </thead>
             <tbody">
-                <tr>
-                    <th scope="row">1</th>
-                    <td>BSc in SWE</td>
-                    <td>Daffodil International University</td>
-                    <td>
-                        <a href="" class="btn btn-success">Edit</a>
-                        <a href="" class="btn btn-primary">View</a>
-                        <a href="" class="btn btn-danger"> Delete</a>
+                @foreach ($education as $key => $educations)
+                    <tr>
+                        <th scope="row">{{ $key + 1 }}</th>
+                        <td>{{ $educations->deg_title }}</td>
+                        <td>{{ $educations->inst_name }}</td>
+                        <td>
+                            <a href="" class="btn btn-success data-bs-toggle="modal"
+                                data-bs-target="#updateModal">Edit</a>
+                            <a href="" class="btn btn-primary">View</a>
+                            <a href="" class="btn btn-danger"> Delete</a>
 
-                    </td>
-                </tr>
-
-
+                        </td>
+                    </tr>
+                @endforeach
                 </tbody>
         </table>
 
     </div>
 @endsection
-@include('backend.qualification.add')
+
 @include('backend.qualification.ajax')
+@include('backend.qualification.add')
+@include('backend.qualification.update')

@@ -31,7 +31,7 @@
             let email = $('#email').val();
             let img_url = $('#file').val();
 
-            console.log(title, des,name,date,deg,phone,add,email,img_url);
+            // console.log(title, des,name,date,deg,phone,add,email,img_url);
 
             // })
             $.ajax({

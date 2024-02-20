@@ -10,8 +10,9 @@ class AboutController extends Controller
 {
     public function index()
     {
+        $about = About::latest()->get();
 
-        return view('backend.about.index');
+        return view('backend.about.index', compact('about'));
     }
     // for Create...
     public function insert(Request $request)
@@ -58,24 +59,24 @@ class AboutController extends Controller
             ]);
         } else {
 
-        About::create([
-            'title' => $request->title,
-            'description' => $request->des,
-            'full_name' => $request->name,
-            'date' => $request->date,
-            'degree' => $request->deg,
-            'phone' => $request->phone,
-            'address' => $request->add,
-            'email' => $request->email,
-            'img' => $request->img_url,
+            About::create([
+                'title' => $request->title,
+                'description' => $request->des,
+                'full_name' => $request->name,
+                'date' => $request->date,
+                'degree' => $request->deg,
+                'phone' => $request->phone,
+                'address' => $request->add,
+                'email' => $request->email,
+                'img' => $request->img_url,
 
 
 
-        ]);
-        return response()->json([
-            'status' => 'success'
+            ]);
+            return response()->json([
+                'status' => 'success'
 
-        ]);
+            ]);
+        }
     }
-}
 }
